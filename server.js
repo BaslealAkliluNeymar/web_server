@@ -9,14 +9,12 @@ const jwt = require("jsonwebtoken");
 const app = express();
 const port = 3000;
 
-// Middleware
 app.use(cors({
-  origin: "http://localhost:5173", // 👈 set exact origin, not '*'
-  credentials: true,               // 👈 allow cookies
+  origin: "https://web-server-vyw2.onrender.com/", 
+  credentials: true,              
 }));
 app.use(bodyParser.json());
 
-// Database mock
 const healthFacilities = [
   {
     id: 'HF001',
