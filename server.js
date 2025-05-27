@@ -11,6 +11,7 @@ const port = 3000;
 
 app.use(cors({
   origin:[
+    "https://lmd-fit.org",
     "https://web-three-woad.vercel.app",
     "https://web-server-vyw2.onrender.com/api/login",
     "https://web-server-vyw2.onrender.com",
