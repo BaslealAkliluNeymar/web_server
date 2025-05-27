@@ -11,7 +11,7 @@ const port = 3000;
 
 app.use(cors({
   origin:[
-    "https://web-three-woad.vercel.app/",
+    "https://web-three-woad.vercel.app/login",
     "http://localhost:3000", // for local development
     "http://localhost:5173"  // if using Vite dev server
   ],
