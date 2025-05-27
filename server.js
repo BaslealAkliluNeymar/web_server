@@ -10,7 +10,11 @@ const app = express();
 const port = 3000;
 
 app.use(cors({
-  origin: "https://web-server-vyw2.onrender.com/login", 
+  origin:[
+    "https://web-three-woad.vercel.app/",
+    "http://localhost:3000", // for local development
+    "http://localhost:5173"  // if using Vite dev server
+  ],
   credentials: true,              
 }));
 app.use(bodyParser.json());
