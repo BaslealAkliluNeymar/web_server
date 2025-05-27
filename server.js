@@ -10,7 +10,7 @@ const app = express();
 const port = 3000;
 
 app.use(cors({
-  origin: "https://web-three-woad.vercel.app/", 
+  origin: "https://web-server-vyw2.onrender.com/login", 
   credentials: true,              
 }));
 app.use(bodyParser.json());
