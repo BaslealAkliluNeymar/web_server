@@ -10,78 +10,12 @@ const app = express();
 const port = 3001;
 
 app.use(cors({
-  origin:[
-    "https://lmd-fit.org",
-    "https://web-three-woad.vercel.app",
-    "https://web-server-vyw2.onrender.com/api/login",
-    "https://web-server-vyw2.onrender.com",
-    "https://web-server-vyw2.onrender.com/api/pickups", 
-    "https://web-server-vyw2.onrender.com/api/health-facilities",
-    "https://web-server-vyw2.onrender.com/api/packages",
-    "https://web-server-vyw2.onrender.com/api/drivers",
-    "https://web-server-vyw2.onrender.com/api/vehicles",
-    "https://web-server-vyw2.onrender.com/api/customers",
-    "https://web-server-vyw2.onrender.com/api/drivers/:driverId/pickups",
-    "https://web-server-vyw2.onrender.com/api/vehicles",
-    "https://web-server-vyw2.onrender.com/api/vehicles/:vehicleId",
-    "https://web-server-vyw2.onrender.com/api/user",
-    "https://web-server-vyw2.onrender.com/api/login",
-    "https://web-server-vyw2.onrender.com/api/logout",
-    "https://web-server-vyw2.onrender.com/api/pickups/:id",
-    "https://web-server-vyw2.onrender.com/api/pickups",
-    "https://web-server-vyw2.onrender.com/api/health-facilities/:id",
-    "https://web-server-vyw2.onrender.com/api/packages/:qrCode",
-    "https://web-server-vyw2.onrender.com/api/customers/:customerId/packages",
-    "https://web-server-vyw2.onrender.com/api/drivers",
-    "https://web-server-vyw2.onrender.com/api/vehicles",
-    "https://web-server-vyw2.onrender.com/api/vehicles/:vehicleId",
-    "https://web-server-vyw2.onrender.com/api/user",
-    "https://web-server-vyw2.onrender.com/api/login",
-    "https://web-server-vyw2.onrender.com/api/logout",
-    "https://web-server-vyw2.onrender.com/api/pickups/:id",
-    "https://web-server-vyw2.onrender.com/api/pickups",
-    "http://localhost:3000", // for local development
-    "http://localhost:5173",
-    "https://fit-lmd.onrender.com",
-    "https://fit-lmd.onrender.com/api/login",
-    "https://fit-lmd.onrender.com/api/pickups",
-    "https://fit-lmd.onrender.com/api/health-facilities",
-    "https://fit-lmd.onrender.com/api/packages",
-    "https://fit-lmd.onrender.com/api/drivers",
-    "https://fit-lmd.onrender.com/api/vehicles",
-    "https://fit-lmd.onrender.com/api/customers",
-    "https://fit-lmd.onrender.com/api/drivers/:driverId/pickups",
-    "https://fit-lmd.onrender.com/api/vehicles",
-    "https://fit-lmd.onrender.com/api/vehicles/:vehicleId",
-    "https://fit-lmd.onrender.com/api/user",
-    "https://fit-lmd.onrender.com/api/login",
-    "https://fit-lmd.onrender.com/api/logout",
-    "https://fit-lmd.onrender.com/api/pickups/:id",
-    "https://fit-lmd.onrender.com/api/pickups",
-    "https://fit-lmd.onrender.com/api/health-facilities/:id",
-    "https://fit-lmd.onrender.com/api/packages/:qrCode",
-    "https://fit-lmd.onrender.com/api/customers/:customerId/packages",
-    "https://fit-lmd.onrender.com/api/drivers",
-    "https://fit-lmd.onrender.com/api/vehicles",
-    "https://fit-lmd.onrender.com/api/vehicles/:vehicleId",
-    "https://fit-lmd.onrender.com/api/user",
-    "https://fit-lmd.onrender.com/api/login",
-    "https://fit-lmd.onrender.com/api/logout",
-    "https://fit-lmd.onrender.com/api/pickups/:id",
-    "https://fit-lmd.onrender.com/api/pickups",
-    "https://fit-lmd.onrender.com/api/health-facilities/:id",
-    "https://fit-lmd.onrender.com/api/packages/:qrCode",
-    "https://fit-lmd.onrender.com/api/customers/:customerId/packages",
-    "https://fit-lmd.onrender.com/api/drivers",
-    "https://fit-lmd.onrender.com/api/vehicles",
-    "https://fit-lmd.onrender.com/api/vehicles/:vehicleId",
-    "https://fit-lmd.onrender.com/api/user",
-    "*"
-
-  // if using Vite dev server
-  ],
-  credentials: true,              
+  origin: '*',
+  credentials: true,
 }));
+
+
+
 app.use(bodyParser.json());
 
 const healthFacilities = [
