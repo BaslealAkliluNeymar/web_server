@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const jwt = require("jsonwebtoken");
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(cors({
   origin:[
@@ -75,7 +75,8 @@ app.use(cors({
     "https://fit-lmd.onrender.com/api/drivers",
     "https://fit-lmd.onrender.com/api/vehicles",
     "https://fit-lmd.onrender.com/api/vehicles/:vehicleId",
-    "https://fit-lmd.onrender.com/api/user"
+    "https://fit-lmd.onrender.com/api/user",
+    "*"
 
   // if using Vite dev server
   ],
@@ -658,6 +659,53 @@ app.post('/api/pickups', (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+const FACILITIES  = [
+  {
+      facility_id: "fac_001",
+      facility_name: "Tikur Anbessa Specialized Hospital",
+      facility_type:"EPSS warehouse",
+      address: "Addis Ababa, Ethiopia",
+      name: "Main Hospital",
+      latitude: 40.712776,
+      longitude: -74.005974,
+      geofenceRadius: 1000,
+      contact_person_id: "cont_001",
+      contact_person_phone: "+251911234567",
+      region: "Addis Ababa",
+      created_at: "2025-01-10T08:30:00Z",
+      updated_at: "2025-04-25T10:45:00Z"
+  },
+  {
+      facility_id: "fac_002",
+      facility_name: "St. Paul's Hospital Millennium Medical College",
+      facility_type:"EPSS warehouse",
+      address: "Addis Ababa, Ethiopia",
+      name: "Main Hospital",
+      latitude: 40.712776,
+      longitude: -74.005974,
+      geofenceRadius: 1000,
+      contact_person_id: "cont_002",
+      contact_person_phone: "+251922345678",
+      region: "Addis Ababa",
+      created_at: "2025-01-15T09:00:00Z",
+      updated_at: "2025-04-20T11:30:00Z"
+  },
+  {
+      facility_id: "fac_003",
+      facility_name: "Yekatit 12 Hospital Medical College",
+      facility_type:"EPSS warehouse",
+      address: "Addis Ababa, Ethiopia",
+      name: "Main Hospital",
+      latitude: 40.712776,
+      longitude: -74.005974,
+      geofenceRadius: 1000,
+      contact_person_id: "cont_003",
+      contact_person_phone: "+251933456789",
+      region: "Addis Ababa",
+      created_at: "2025-01-20T10:15:00Z",
+      updated_at: "2025-04-22T12:00:00Z"
+  }
+]
 
 const vehicles = [
   {
@@ -742,6 +790,9 @@ app.post('/api/vehicles',(req,res) =>{
   }
 })
 
+app.get('/api/facilities',(req,res) =>{
+  res.send(FACILITIES)
+})
 // Get all pickups
 app.get('/api/pickups', (req, res) => {
   res.json(pickups);
